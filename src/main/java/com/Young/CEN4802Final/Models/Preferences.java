@@ -2,6 +2,8 @@ package com.Young.CEN4802Final.Models;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 public class Preferences {
 
@@ -23,6 +25,18 @@ public class Preferences {
 
     @Column(nullable = false)
     private float foodReminderInterval;
+
+    @Column(nullable = false)
+    private LocalDateTime lastShortBreakReminder;
+
+    @Column(nullable = false)
+    private LocalDateTime lastLongBreakReminder;
+
+    @Column(nullable = false)
+    private LocalDateTime lastWaterReminder;
+
+    @Column(nullable = false)
+    private LocalDateTime lastFoodReminder;
 
     //getters and setters
 
@@ -66,6 +80,38 @@ public class Preferences {
     }
     public void setFoodReminderInterval(float foodReminderInterval) {
     	this.foodReminderInterval = foodReminderInterval;
+    }
+
+    public LocalDateTime getLastShortBreakReminder() {
+    	return lastShortBreakReminder;
+    }
+
+    public void setLastShortBreakReminder(LocalDateTime lastShortBreakReminder) {
+    	this.lastShortBreakReminder = lastShortBreakReminder;
+    }
+
+    public LocalDateTime getLastLongBreakReminder() {
+    	return lastLongBreakReminder;
+    }
+
+    public void setLastLongBreakReminder(LocalDateTime lastLongBreakReminder) {
+    	this.lastLongBreakReminder = lastLongBreakReminder;
+    }
+
+    public LocalDateTime getLastWaterReminder() {
+    	return lastWaterReminder;
+    }
+
+    public void setLastWaterReminder(LocalDateTime lastWaterReminder) {
+    	this.lastWaterReminder = lastWaterReminder;
+    }
+
+    public LocalDateTime getLastFoodReminder() {
+    	return lastFoodReminder;
+    }
+
+    public void setLastFoodReminder(LocalDateTime lastFoodReminder) {
+    	this.lastFoodReminder = lastFoodReminder;
     }
 
 
