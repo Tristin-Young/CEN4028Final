@@ -12,7 +12,7 @@ public class Water {
     private long id;
 
     @ManyToOne
-    @JoinColumn(name = "preferences_id" , nullable = false)
+    @JoinColumn(name = "preferencesId" , nullable = false)
     private Preferences preferences;
 
     @Column(nullable = false)
@@ -51,4 +51,10 @@ public class Water {
     	this.waterAmount = waterAmount;
     }
 
+    public long getPreferencesId() {
+        return preferences.getId();
+    }
+    public void setPreferencesId(long preferencesId) {
+        this.preferences.setId(preferencesId);
+    }
 }

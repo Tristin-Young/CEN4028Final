@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.user-selection, .add-user {
+    flex-basis: 45%;
+}
+
+.counter, .water-intake {
+    background-color: white;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 8px;
+    width: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+input[type=number], input[type=text], select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005f73;
+}
+
+label, span {
+    margin-right: 10px;
+}

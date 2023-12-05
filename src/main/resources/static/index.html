@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health and Wellness App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body onload="initializePage();">
+<h1>Health and Wellness App</h1>
+
+<div class="top-row">
+    <div class="user-selection">
+        <label for="userDropdown">Select User:</label>
+        <select id="userDropdown" onchange="loadUserPreferences()">
+            <option value="">Select User</option>
+            <!-- User options will be populated here -->
+        </select>
+    </div>
+    <div class="add-user">
+        <input type="text" id="newUserName" placeholder="Enter name" />
+        <button onclick="addUser()">Add User</button>
+    </div>
+</div>
+
+<div class="counter">
+    <label for="shortBreakInterval">Short Break Interval (minutes):</label>
+    <input type="number" id="shortBreakInterval" />
+    <button onclick="setShortBreakPreferences()">Set Interval</button>
+    <span id="shortTimeRemaining">Time Remaining</span>
+    <button onclick="markAsCompleted('shortBreak')">Mark as Completed</button>
+</div>
+
+<div class="counter">
+    <label for="longBreakInterval">Long Break Interval (minutes):</label>
+    <input type="number" id="longBreakInterval" />
+    <button onclick="setLongBreakPreferences()">Set Interval</button>
+    <span id="longTimeRemaining">Time Remaining</span>
+    <button onclick="markAsCompleted('longBreak')">Mark as Completed</button>
+</div>
+
+<div class="counter">
+    <label for="waterReminderInterval">Water Reminder Interval (minutes):</label>
+    <input type="number" id="waterReminderInterval" />
+    <button onclick="setWaterPreferences()">Set Interval</button>
+    <span id="waterTimeRemaining">Time Remaining</span>
+    <button onclick="markAsCompleted('waterBreak')">Mark as Completed</button>
+</div>
+
+<div class="counter">
+    <label for="foodReminderInterval">Food Reminder Interval (minutes):</label>
+    <input type="number" id="foodReminderInterval" />
+    <button onclick="setFoodPreferences()">Set Interval</button>
+    <span id="foodTimeRemaining">Time Remaining</span>
+    <button onclick="markAsCompleted('foodBreak')">Mark as Completed</button>
+</div>
+
+<div class="water-intake">
+    <div>
+        <label for="waterAmount">Water Amount (oz):</label>
+        <input type="number" id="waterAmount" />
+        <button onclick="logWater()">Log Water</button>
+    </div>
+    <div id="totalWater">
+        Total Water Drank Today: <span id="totalWaterDrank">0</span> oz
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
