@@ -1,4 +1,4 @@
-FROM openjdk:20 as builder
+FROM openjdk:20-bullseye as builder
 WORKDIR /CEN4802FINAL
 COPY .mvn/ .mvn
 COPY mvnw .
