@@ -26,14 +26,6 @@ public class WaterController {
         return ResponseEntity.ok(savedWater);
     }
 
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Water> updateWaterLog(@PathVariable Long id, @RequestBody Water water) {
-        return waterService.update(id, water)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
-    }
-
     @GetMapping("/totalWater/{id}")
     public ResponseEntity<Float> getTotalWaterForDay(@PathVariable Long id) {
         float total = waterService.getTotalWaterForDay(id);

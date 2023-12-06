@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cen4802final-deployment
+spec:
+  replicas: 2  # Number of replicas
+  selector:
+    matchLabels:
+      app: cen4802final
+  template:
+    metadata:
+      labels:
+        app: cen4802final
+    spec:
+      containers:
+        - name: cen4802final
+          image: tristinyoung/cen4802final:latest
+          ports:
+            - containerPort: 9000

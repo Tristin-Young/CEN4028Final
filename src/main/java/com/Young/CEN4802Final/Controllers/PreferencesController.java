@@ -24,16 +24,10 @@ public class PreferencesController {
     }
 
     @PostMapping("/")
-    public Preferences createPreferences(@RequestBody Preferences preferences) {
-        return preferencesService.save(preferences);
+    public ResponseEntity<Preferences> createPreferences(@RequestBody Preferences preferences) {
+        Preferences savedPreferences = preferencesService.save(preferences);
+        return ResponseEntity.ok(savedPreferences);
     }
-
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Preferences> updatePreferences(@PathVariable Long id, @RequestBody Preferences preferences) {
-//        return preferencesService.updatePreferences(id, preferences)
-//                .map(ResponseEntity::ok)
-//                .orElse(ResponseEntity.notFound().build());
-//    }
 
     @GetMapping("/allUsers")
     public ResponseEntity<List<Preferences>> getAllUsers() {
@@ -89,13 +83,12 @@ public class PreferencesController {
         return ResponseEntity.ok(setFoodBreak);
     }
 
-    // In your PreferencesController (or a relevant controller)
-
     @GetMapping("/timeRemaining/{userId}/{type}")
     public ResponseEntity<Optional<Long>> getTimeRemaining(@PathVariable Long userId, @PathVariable String type) {
         // Logic to calculate time remaining for the specified type of reminder
         Optional<Long> timeRemaining = preferencesService.calculateTimeRemaining(userId, type);
         return ResponseEntity.ok(timeRemaining);
     }
+
 
 }

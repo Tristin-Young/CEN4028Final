@@ -28,7 +28,6 @@ public class PreferencesService {
         return preferencesRepository.save(preferences);
     }
 
-
     public Optional<Preferences> updateLastShortBreak(Long id) {
         return preferencesRepository.findById(id).map(existingPreferences -> {
             existingPreferences.setLastShortBreakReminder(LocalDateTime.now());

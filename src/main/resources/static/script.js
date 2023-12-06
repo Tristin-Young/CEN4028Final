@@ -31,6 +31,10 @@ function loadUserPreferences() {
                 document.getElementById('foodReminderInterval').value = preferences.foodReminderInterval;
                 startUpdatingTimeRemaining(userId);
                 updateTotalWaterDrank();
+                markAsCompleted('shortBreak');
+                markAsCompleted('longBreak');
+                markAsCompleted('waterBreak');
+                markAsCompleted('foodBreak');
             });
     } else {
         setDefaultPreferences();
@@ -131,20 +135,6 @@ function logWater() {
     });
 
 }
-
-// function resetAction(actionType) {
-//     const userId = document.getElementById('userDropdown').value;
-//
-//     fetch(`/api/preferences/reset/${userId}`, {
-//         method: 'POST',
-//         headers: { 'Content-Type': 'application/json' },
-//         body: JSON.stringify({ actionType })
-//     }).then(response => {
-//         if (response.ok) {
-//             alert(`${actionType} reset successfully`);
-//         }
-//     });
-// }
 
 function addUser() {
     const userName = document.getElementById('newUserName').value;

@@ -35,16 +35,6 @@ public class WaterService {
         return waterRepository.save(water);
     }
 
-    public Optional<Water> update(Long id, Water water) {
-        return waterRepository.findById(id).map(existingWaterLog -> {
-            // Update the necessary fields from water
-            // For example:
-            // existingWaterLog.setWaterAmount(water.getWaterAmount());
-            // Add similar lines for other fields
-            return waterRepository.save(existingWaterLog);
-        });
-    }
-
     //get total water for the day for a specific user
     public float getTotalWaterForDay(Long preferences_id) {
 
